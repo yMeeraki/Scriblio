@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scriblio</title>
+    <link rel="stylesheet" href="./dist/style.css">
+
+</head>
+<body>
+    <!-- NavBar -->
+    <header class="bg-primary text-white p-5 flex flex-col md:gap-10 md:flex-row md:p-8">
+        <div class="mb-4 md:mb-0">
+            <p class="text-2xl text-center font-bold md:text-left">
+                <a href="#">Scriblio</a>
+            </p>
+        </div>
+        <nav class="w-full md:self-center">
+            <ul class="flex flex-col space-y-2 items-center md:flex-row md:space-x-6 md:space-y-0 ">
+                <l1><a href="#" class="hover:text-tertiary">Home</a></l1>
+                <l1><a href="#" class="hover:text-tertiary">About</a></l1>
+                <l1><a href="#" class="hover:text-tertiary">Services</a></l1>
+                <l1><a href="#" class="hover:text-tertiary">Gallery</a></l1>
+                <l1><a href="#" class="hover:text-tertiary">Contact</a></l1>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Content -->
+    <main class="bg-blue-500">
+        <aside>
+            <label for="create-blog">
+                <h4>What You Are Thinking</h4>
+            </label>
+            <textarea name="create-blog" id="create-blog"></textarea>
+        </aside>
+        <section></section>
+    </main>
+
+    <!--Search Features -->
+     <aside class="bg-green-500">
+        <label for="search-blog"></label>
+        <input type="text" id="search-blog">
+     </aside>
+</body>
+</html>
