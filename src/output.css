@@ -554,66 +554,12 @@ video {
   display: none;
 }
 
-.container {
-  width: 100%;
+.relative {
+  position: relative;
 }
 
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
-}
-
-.fixed {
-  position: fixed;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.left-0 {
-  left: 0px;
-}
-
-.left-2 {
-  left: 0.5rem;
-}
-
-.top-0 {
-  top: 0px;
-}
-
-.top-2 {
-  top: 0.5rem;
-}
-
-.z-10 {
-  z-index: 10;
+.top-2\.5 {
+  top: 0.625rem;
 }
 
 .mb-4 {
@@ -628,10 +574,6 @@ video {
   height: 100%;
 }
 
-.w-0 {
-  width: 0px;
-}
-
 .w-full {
   width: 100%;
 }
@@ -644,8 +586,8 @@ video {
   align-items: center;
 }
 
-.gap-8 {
-  gap: 2rem;
+.gap-11 {
+  gap: 2.75rem;
 }
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -654,25 +596,14 @@ video {
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
-.overflow-hidden {
-  overflow: hidden;
+.bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(47 72 88 / var(--tw-bg-opacity, 1));
 }
 
-.rounded {
-  border-radius: 0.25rem;
-}
-
-.border {
-  border-width: 1px;
-}
-
-.border-4 {
-  border-width: 4px;
-}
-
-.border-accent {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 179 67 / var(--tw-border-opacity, 1));
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 190 255 / var(--tw-bg-opacity, 1));
 }
 
 .bg-accent {
@@ -680,25 +611,12 @@ video {
   background-color: rgb(255 179 67 / var(--tw-bg-opacity, 1));
 }
 
-.bg-primary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(47 72 88 / var(--tw-bg-opacity, 1));
-}
-
-.bg-opacity-95 {
-  --tw-bg-opacity: 0.95;
-}
-
-.p-11 {
-  padding: 2.75rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
-}
-
 .p-5 {
   padding: 1.25rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .text-center {
@@ -710,9 +628,9 @@ video {
   line-height: 2rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -722,40 +640,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.duration-150 {
-  transition-duration: 150ms;
-}
-
-.focus-within\:outline-2:focus-within {
-  outline-width: 2px;
-}
-
-.focus-within\:outline-secondary:focus-within {
-  outline-color: #00beff;
-}
-
-.hover\:cursor-pointer:hover {
-  cursor: pointer;
-}
-
-.hover\:bg-accent:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 179 67 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:text-black:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
 .hover\:text-tertiary:hover {

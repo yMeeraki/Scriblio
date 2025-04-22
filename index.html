@@ -30,32 +30,54 @@
 
     <!-- Content -->
     <main class="flex">
-        <aside id="create-blog-form" class="h-full bg-secondary">
-            <h1>Create Blog</h1>
+        <aside id="create-blog-form" class="h-full text-white w-0 fixed z-10 top-0 left-0 overflow-hidden transition duration-150 bg-primary bg-opacity-95 ">
+            <a href="javascript:void(0)" class="absolute top-2 left-2 text-3xl" onclick="closeBlog()">&times;</a>
             <!-- Add New Blog -->
        
-                <form  class="flex flex-col relative top-2.5 w-full ">
-                    <label for="blog-titles">Blog Titles:</label>
-                    <input type="text" name="blog-titles" id="blog-titles">
+                <form  class="flex flex-col gap-8 p-11 ">
+                    <div>
+                        <label for="blog-titles">Blog Title:</label><br>
+                        <input type="text" name="blog-titles" id="blog-titles" class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded" >
+                    </div>
                 
-                    <label for="blog-img">Blog Image:</label>
-                    <input type="file" id="blog-img" name="blog-img" accept="image/*">
+                    <div>
+                        <label for="blog-img">Blog Image:</label><br>
+                        <input type="file" id="blog-img" name="blog-img" accept="image/*" class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded">
+                    </div>
+
+                    <div>
+                        <label for=" blog-category">Blog Category:</label>
+                        
+                        <select id=" blog-category" name=" blog-category" class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded">
+                            <option value="">-----</option>
+                            <option value="Food">Food</option>
+                            <option value="Travel">Travel</option>
+                            <option value="Lifestyle">Lifestyle</option>
+                            <option value="Health">Health</option>
+                            <option value="Tech">Tech</option>
+                        </select>
+                    </div>
                 
-                    <label for="short-blog-posts">Short Blog Posts:</label>
-                    <textarea name="short-blog-posts" id="short-blog-posts" cols="30" rows="10"></textarea>
+                    <div>
+                        <label for="short-blog-posts">Blog Post:</label><br>
+                        <textarea name="short-blog-posts" id="short-blog-posts" rows="5" class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded "></textarea>
+                    </div>
                 
-                    <input type="submit" value="Create Blog">
+                    <input type="submit" value="Create Blog" class="border-accent hover:text-black p-2 border-4 rounded hover:cursor-pointer hover:bg-accent">
                 </form>
            
 
             
         </aside>
 
-   
+        
 
-        <section>
-            <!-- Search -->
+        <section class="container">
+            
             <div>
+                <button onclick="openBlogForm()"  class="bg-accent p-5">
+                    Create
+                </button>
                 Search
             </div>
 
@@ -68,5 +90,5 @@
 
 
 </body>
-<script type="module" src="index.js" defer></script>
+<script src="index.js" defer></script>
 </html>

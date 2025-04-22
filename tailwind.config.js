@@ -9,7 +9,7 @@ module.exports = {
         tertiary:"#00c9f8",
         accent:"#ffb343"
       },
-      
+      container:"1200px"
     },
   },
   plugins: [],

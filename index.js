@@ -1,4 +1,4 @@
-function openBlog() {
+function openBlogForm() {
     document.getElementById("create-blog-form").style.width = "100%";
 }
 
