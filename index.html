@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scriblio</title>
     <link rel="stylesheet" href="./dist/style.css">
-
+   
 </head>
+
 <body>
     <!-- NavBar -->
     <header class="bg-primary text-white p-5 flex flex-col md:gap-10 md:flex-row md:p-8">
@@ -27,20 +29,44 @@
     </header>
 
     <!-- Content -->
-    <main class="bg-blue-500">
-        <aside>
-            <label for="create-blog">
-                <h4>What You Are Thinking</h4>
-            </label>
-            <textarea name="create-blog" id="create-blog"></textarea>
+    <main class="flex">
+        <aside id="create-blog-form" class="h-full bg-secondary">
+            <h1>Create Blog</h1>
+            <!-- Add New Blog -->
+       
+                <form  class="flex flex-col relative top-2.5 w-full ">
+                    <label for="blog-titles">Blog Titles:</label>
+                    <input type="text" name="blog-titles" id="blog-titles">
+                
+                    <label for="blog-img">Blog Image:</label>
+                    <input type="file" id="blog-img" name="blog-img" accept="image/*">
+                
+                    <label for="short-blog-posts">Short Blog Posts:</label>
+                    <textarea name="short-blog-posts" id="short-blog-posts" cols="30" rows="10"></textarea>
+                
+                    <input type="submit" value="Create Blog">
+                </form>
+           
+
+            
         </aside>
-        <section></section>
+
+   
+
+        <section>
+            <!-- Search -->
+            <div>
+                Search
+            </div>
+
+            <!-- List of Blogs -->
+            <div>
+                List of blogs
+            </div>
+        </section>
     </main>
 
-    <!--Search Features -->
-     <aside class="bg-green-500">
-        <label for="search-blog"></label>
-        <input type="text" id="search-blog">
-     </aside>
+
 </body>
+<script type="module" src="index.js" defer></script>
 </html>
