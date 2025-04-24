@@ -19,13 +19,17 @@ function closeUpdateModule() {
 }
 
 // Btns
-const createFormBtn = document.getElementById("create-form-btn") 
-const closeBtn = document.getElementById("close-btn")
+const createBlogBtn = document.getElementById("create-form-btn") 
+const closeCreateBlogBtn = document.getElementById("close-btn")
 
+const updateBlogBtn = document.getElementById("update-blog-btn")
+const closeUpdateBlogBtn = document.getElementById("close-update-btn")
 
-createFormBtn.addEventListener('click', openCreateModule)
-closeBtn.addEventListener('click', closeCreateModule)
+createBlogBtn.addEventListener('click', openCreateModule)
+closeCreateBlogBtn.addEventListener('click', closeCreateModule)
 
+updateBlogBtn.addEventListener('click', openUpdateModule)
+closeUpdateBlogBtn.addEventListener('click',closeUpdateModule)
 
 // factory funtion for blog lists
 function blog(category, title, image, content) {
@@ -36,7 +40,7 @@ function blog(category, title, image, content) {
 
 // Blog List
 const blogList = [
-    blog("Food", "DevFuel: The 10 - Minute Power Snack for Coders","ff", "Coding can be intense. Between solving bugs and shipping features, you might forget to eat — or worse, reach for junk food. Here’s a better alternative: a quick, nutritious snack you can whip up in 10 minutes. Try this combo: whole grain toast, mashed avocado, a drizzle of lemon, chili flakes, and a soft - boiled or poached egg.It's packed with fiber, healthy fats, and protein. Add some pumpkin seeds for crunch and magnesium — great for muscle and nerve function when you’ve been sitting for hours. Quick snacks like this keep your energy stable and your brain sharp, without the crash.Bonus: it's easy to prep between work sprints or when your code is compiling. Fuel your body like you fuel your logic — clean and efficient.")
+    blog("Food", "DevFuel: The 10 - Minute Power Snack for Coders","", "Coding can be intense. Between solving bugs and shipping features, you might forget to eat — or worse, reach for junk food. Here’s a better alternative: a quick, nutritious snack you can whip up in 10 minutes. Try this combo: whole grain toast, mashed avocado, a drizzle of lemon, chili flakes, and a soft - boiled or poached egg.It's packed with fiber, healthy fats, and protein. Add some pumpkin seeds for crunch and magnesium — great for muscle and nerve function when you’ve been sitting for hours. Quick snacks like this keep your energy stable and your brain sharp, without the crash.Bonus: it's easy to prep between work sprints or when your code is compiling. Fuel your body like you fuel your logic — clean and efficient.")
 ]
 
 // Open Blog Content
