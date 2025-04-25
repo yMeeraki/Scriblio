@@ -36,25 +36,28 @@
                 class="absolute top-2 left-2 text-3xl hover:text-red-400">&times;</a>
             <!-- Add New Blog -->
 
-            <form class="flex flex-col gap-8 p-11">
+            <form class="flex flex-col gap-8 p-11" id="create-form">
                 <div>
-                    <label for="blog-titles">Blog Title:</label><br>
-                    <input type="text" name="blog-titles" id="blog-titles"
-                        class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded">
+                    <input type="hidden" name="edit-index" id="edit-index">
+                </div>
+                <div>
+                    <label for="blog-titles-create">Blog Title:</label><br>
+                    <input type="text" name="blog-titles-create" id="blog-titles-create"
+                        class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded"
+                        required>
                 </div>
 
                 <div>
-                    <label for="blog-img">Blog Image:</label><br>
-                    <input type="file" id="blog-img" name="blog-img" accept="image/*"
-                        class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded">
+                    <label for="blog-img-create">Blog Image:</label><br>
+                    <input type="file" id="blog-img-create" name="blog-img-create" accept="image/*"
+                        class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded"
+                        required>
                 </div>
-
-                <div class="">
-                    <label for=" blog-category">Blog Category:</label>
-
-                    <select id=" blog-category" name=" blog-category"
-                        class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded">
-                        <option value="">-----</option>
+                <div class="w-full">
+                    <label for="blog-category-create" class="block mb-1 text-white">Blog Category:</label>
+                    <select id="blog-category-create" name="blog-category-create"
+                        class="w-full p-2 bg-primary border rounded focus:outline-none focus:ring-2 focus:ring-secondary text-white">
+                        <option value="">Select a category</option>
                         <option value="Food">Food</option>
                         <option value="Travel">Travel</option>
                         <option value="Lifestyle">Lifestyle</option>
@@ -64,9 +67,10 @@
                 </div>
 
                 <div>
-                    <label for="short-blog-posts">Blog Post:</label><br>
-                    <textarea name="short-blog-posts" id="short-blog-posts" rows="5"
-                        class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded "></textarea>
+                    <label for="short-blog-posts-create">Blog Post:</label><br>
+                    <textarea name="short-blog-posts-create" id="short-blog-posts-create" rows="5"
+                        class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded "
+                        required></textarea>
                 </div>
 
                 <input type="submit" value="Create Blog"
@@ -103,7 +107,7 @@
             <!-- List of Blogs -->
             <div class="container gap-2">
                 <h1 class="text-2xl text-center text-white">Scriblio Blog Library</h1>
-                <ul class="flex flex-col gap-4  ">
+                <ul class="flex flex-col gap-4" id="display-blog">
                     <li class="gap-2">
                         <div name="open-blog-content"
                             class="p-6 md:p-8 shadow-lg bg-secondary bg-opacity-50 text-white flex flex-col gap-4 hover:cursor-pointer transition-all delay-150 duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-tertiary rounded-xl">
@@ -114,7 +118,7 @@
                             </span>
 
                             <!-- Blog Title -->
-                            <h3 class="text-xl md:text-2xl font-semibold hover:text-accent">
+                            <h3 class="text-xl md:text-2xl font-semibold hover:text-accent capitalize">
                                 Minimal Desk, Maximum Focus
                             </h3>
 
@@ -135,11 +139,11 @@
                             </div>
                         </div>
                         <div
-                            class="text-sm md:text-base text-white/90 gap-5 p-6 md:p-8 rounded-xl shadow-lg bg-secondary bg-opacity-90 hidden transition-all delay-150 duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-accent">
+                            class="bg-secondary md:text-base text-white/90 gap-5 p-6 md:p-8 rounded-xl shadow-lg bg-opacity-90 hidden transition-all delay-150 duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-accent">
                             <img src="./src/images/decluttering-my-closet-lifestyle.jpg" alt=""
                                 class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover">
                             <br>
-                            <p class="leading-relaxed">Your environment shapes your productivity. A clean, well-designed
+                            <p class="font-thin">Your environment shapes your productivity. A clean, well-designed
                                 workspace can make coding feel less like a chore and
                                 more like a craft. Minimalism isn’t just aesthetic — it’s functional.
 
@@ -217,25 +221,26 @@
     </main>
     <aside id="update-blog-form"
         class="h-full text-white w-0 fixed z-10 top-0 left-0 overflow-hidden transition-all duration-300 bg-primary bg-opacity-95 ">
-        <a href="javascript:void(0)" id="close-update-btn" class="absolute top-2 left-2 text-3xl hover:text-red-400">&times;</a>
+        <a href="javascript:void(0)" id="close-update-btn"
+            class="absolute top-2 left-2 text-3xl hover:text-red-400">&times;</a>
         <!-- Add New Blog -->
-    
+
         <form class="flex flex-col gap-8 p-11">
             <div>
                 <label for="blog-titles">Blog Title:</label><br>
                 <input type="text" name="blog-titles" id="blog-titles"
                     class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded">
             </div>
-    
+
             <div>
                 <label for="blog-img">Blog Image:</label><br>
                 <input type="file" id="blog-img" name="blog-img" accept="image/*"
                     class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded">
             </div>
-    
+
             <div class="">
                 <label for=" blog-category">Blog Category:</label>
-    
+
                 <select id=" blog-category" name=" blog-category"
                     class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded">
                     <option value="">-----</option>
@@ -246,19 +251,19 @@
                     <option value="Tech">Tech</option>
                 </select>
             </div>
-    
+
             <div>
                 <label for="short-blog-posts">Blog Post:</label><br>
                 <textarea name="short-blog-posts" id="short-blog-posts" rows="5"
                     class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded "></textarea>
             </div>
-    
+
             <input type="submit" value="Update Blog" id="update-blog-btn"
                 class="bg-tertiary hover:bg-accent text-primary p-4 rounded transition-all ease-in-out hover:scale-x-105 font-semibold">
         </form>
-    
-    
-    
+
+
+
     </aside>
 
 
