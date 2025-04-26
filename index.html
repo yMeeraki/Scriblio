@@ -9,7 +9,7 @@
 
 </head>
 
-<body>
+<body class="bg-primary">
     <!-- NavBar -->
     <header class="bg-secondary text-white p-5 flex flex-col md:gap-10 md:flex-row md:p-8">
         <div class="mb-4 md:mb-0">
@@ -29,7 +29,7 @@
     </header>
 
     <!-- Content -->
-    <main class="flex bg-primary">
+    <main class="flex ">
         <aside id="create-blog-form"
             class="h-full text-white w-0 fixed z-10 top-0 left-0 overflow-hidden transition-all duration-300 bg-primary bg-opacity-95 ">
             <a href="javascript:void(0)" id="close-btn"
@@ -58,11 +58,11 @@
                     <select id="blog-category-create" name="blog-category-create"
                         class="w-full p-2 bg-primary border rounded focus:outline-none focus:ring-2 focus:ring-secondary text-white">
                         <option value="">Select a category</option>
-                        <option value="Food">Food</option>
-                        <option value="Travel">Travel</option>
-                        <option value="Lifestyle">Lifestyle</option>
-                        <option value="Health">Health</option>
-                        <option value="Tech">Tech</option>
+                        <option value="food">Food</option>
+                        <option value="travel">Travel</option>
+                        <option value="lifestyle">Lifestyle</option>
+                        <option value="health">Health</option>
+                        <option value="tech">Tech</option>
                     </select>
                 </div>
 
@@ -113,7 +113,7 @@
                             class="p-6 md:p-8 shadow-lg bg-secondary bg-opacity-50 text-white flex flex-col gap-4 hover:cursor-pointer transition-all delay-150 duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-tertiary rounded-xl">
 
                             <!-- Blog Category -->
-                            <span class="bg-purple-500 p-2 rounded font-extrathin tracking-widest uppercase size-10">
+                            <span class="w-auto p-2 rounded font-extrabold text-sm tracking-widest uppercase">
                                 Lifestyle
                             </span>
 
@@ -143,7 +143,7 @@
                             <img src="./src/images/decluttering-my-closet-lifestyle.jpg" alt=""
                                 class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover">
                             <br>
-                            <p class="font-thin">Your environment shapes your productivity. A clean, well-designed
+                            <p class="font-thin p-2">Your environment shapes your productivity. A clean, well-designed
                                 workspace can make coding feel less like a chore and
                                 more like a craft. Minimalism isn’t just aesthetic — it’s functional.
 
@@ -219,52 +219,7 @@
             </div>
         </section>
     </main>
-    <aside id="update-blog-form"
-        class="h-full text-white w-0 fixed z-10 top-0 left-0 overflow-hidden transition-all duration-300 bg-primary bg-opacity-95 ">
-        <a href="javascript:void(0)" id="close-update-btn"
-            class="absolute top-2 left-2 text-3xl hover:text-red-400">&times;</a>
-        <!-- Add New Blog -->
-
-        <form class="flex flex-col gap-8 p-11">
-            <div>
-                <label for="blog-titles">Blog Title:</label><br>
-                <input type="text" name="blog-titles" id="blog-titles"
-                    class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded">
-            </div>
-
-            <div>
-                <label for="blog-img">Blog Image:</label><br>
-                <input type="file" id="blog-img" name="blog-img" accept="image/*"
-                    class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded">
-            </div>
-
-            <div class="">
-                <label for=" blog-category">Blog Category:</label>
-
-                <select id=" blog-category" name=" blog-category"
-                    class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded">
-                    <option value="">-----</option>
-                    <option value="Food">Food</option>
-                    <option value="Travel">Travel</option>
-                    <option value="Lifestyle">Lifestyle</option>
-                    <option value="Health">Health</option>
-                    <option value="Tech">Tech</option>
-                </select>
-            </div>
-
-            <div>
-                <label for="short-blog-posts">Blog Post:</label><br>
-                <textarea name="short-blog-posts" id="short-blog-posts" rows="5"
-                    class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded "></textarea>
-            </div>
-
-            <input type="submit" value="Update Blog" id="update-blog-btn"
-                class="bg-tertiary hover:bg-accent text-primary p-4 rounded transition-all ease-in-out hover:scale-x-105 font-semibold">
-        </form>
-
-
-
-    </aside>
+    
 
 
 </body>
