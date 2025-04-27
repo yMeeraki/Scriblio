@@ -159,7 +159,8 @@ function blogList(records) {
             if (detailBlogContent.style.display === "block") {
                 detailBlogContent.style.display = "none";
             } else {
-                detailBlogContent.style.display = "block";
+                detailBlogContent.style.display = "block"
+        
             }
         });
 
