@@ -94,7 +94,7 @@ function blogList(records) {
 
         // Main Blog Card
         const mainBlogCard = document.createElement('div')
-        mainBlogCard.className = "p-6 md:p-8 shadow-lg bg-secondary bg-opacity-50 text-white flex flex-col gap-4 hover:cursor-pointer transition-all delay-150 duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-tertiary rounded-xl"
+        mainBlogCard.className = "focus:border focus:border-accent p-6 md:p-8 shadow-lg bg-secondary bg-opacity-50 text-white flex flex-col gap-4 hover:cursor-pointer transition-all delay-150 duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-tertiary rounded-xl"
         mainBlogCard.setAttribute("name", "open-blog-content")
 
         const categorySpan = document.createElement("span");
@@ -124,7 +124,7 @@ function blogList(records) {
         const deleteBtn = document.createElement('button')
         deleteBtn.className = "bg-secondary px-4 py-2 rounded hover:bg-red-500 transition font-medium"
         deleteBtn.setAttribute('id', 'delete-blog-btn')
-        // deleteBtn.onclick = deleteBlog(index)
+        deleteBtn.addEventListener('click', () => deleteConfirm(index));
         deleteBtn.textContent = "Delete"
 
         btnControls.appendChild(updateBtn)
@@ -142,12 +142,12 @@ function blogList(records) {
         detailBlogContent.className = "bg-secondary md:text-base text-white/90 gap-5 p-6 md:p-8 rounded-xl shadow-lg bg-opacity-90 hidden transition-all delay-150 duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-accent"
 
         const img = document.createElement('img')
-        img.className = "w-32 h-32 md:w-40 md:h-40 rounded-full object-cover"
+        img.className = "w-32 h-32 md:w-40 md:h-40 rounded object-cover"
         img.src = blog.image
 
 
         const pContent = document.createElement('p')
-        pContent.className = 'font-medium p-2'
+        pContent.className = 'font-medium px-1 py-2'
         pContent.textContent = blog.post
 
 
@@ -160,7 +160,7 @@ function blogList(records) {
                 detailBlogContent.style.display = "none";
             } else {
                 detailBlogContent.style.display = "block"
-        
+
             }
         });
 
@@ -172,3 +172,33 @@ function blogList(records) {
 
     });
 }
+
+
+
+// Delete Blog
+function deleteBlog(index) {
+
+
+    records.splice(index, 1)
+    blogList(records)
+}
+
+function deleteConfirm(index) {
+    const modalDelete = document.getElementById("delete-modal")
+    modalDelete.classList.remove('hidden')
+    modalDelete.classList.add('flex');
+    const deleteBlogTitle = document.getElementById("delete-blog-title")
+    deleteBlogTitle.textContent = records[index].title
+
+    const deleteBtn = modalDelete.querySelector('#delete-btn');
+    deleteBtn.onclick = function () {
+        deleteBlog(index);
+        modalDelete.classList.add('hidden');
+    };
+
+
+    const cancelBtn = modalDelete.querySelector('#cancel-btn');
+    cancelBtn.onclick = function () {
+        modalDelete.classList.add('hidden');
+    };
+} 
