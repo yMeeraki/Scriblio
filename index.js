@@ -245,3 +245,22 @@ function deleteConfirm(index) {
         modalDelete.classList.add('hidden');
     };
 } 
+
+// Filter
+const filter = document.getElementById("filter-blog-category")
+filter.addEventListener('change', function () {
+    const selectedCategory = filter.value
+    const selectedBlogs = []
+    if (selectedCategory !== "All") {
+
+        records.forEach(blog => {
+            if (blog.category === selectedCategory) {
+                selectedBlogs.push(blog)
+            }
+        })
+        blogList(selectedBlogs)
+    }
+    else {
+        blogList(records)
+    }
+})
