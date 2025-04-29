@@ -49,12 +49,12 @@
 
                 <div>
                 <label for="blog-img-create">Image URL:</label><br>
-                <input type="text" id="blog-img-create" name="blog-img-create" placeholder="https://example.com/image.jpg"
+                <input required type="text" id="blog-img-create" name="blog-img-create" placeholder="https://example.com/image.jpg"
                     class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded">
                 </div>
                 <div class="w-full">
                     <label for="blog-category-create" class="block mb-1 text-white">Blog Category:</label>
-                    <select id="blog-category-create" name="blog-category-create"
+                    <select required id="blog-category-create" name="blog-category-create"
                         class="w-full p-2 bg-primary border rounded focus:outline-none focus:ring-2 focus:ring-secondary text-white">
                         <option value="">Select a category</option>
                         <option value="food">Food</option>
@@ -63,6 +63,7 @@
                         <option value="health">Health</option>
                         <option value="tech">Tech</option>
                     </select>
+                    
                 </div>
 
                 <div>
@@ -107,58 +108,7 @@
             <div class="container gap-2">
                 <h1 class="text-2xl text-center text-white">Scriblio Blog Library</h1>
                 <ul class="flex flex-col gap-4" id="display-blog">
-                    <!-- <li class="gap-2">
-                        <div name="open-blog-content"
-                            class="focus:border focus:border-accent p-6 md:p-8 shadow-lg bg-secondary bg-opacity-50 text-white flex flex-col gap-4 hover:cursor-pointer transition-all delay-150 duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-tertiary rounded-xl">
-
-                         
-                            <span class="w-auto p-2 rounded font-extrabold text-sm tracking-widest uppercase">
-                                Lifestyle
-                            </span>
-
-                         
-                            <h3 class="text-xl md:text-2xl font-semibold hover:text-accent capitalize">
-                                Minimal Desk, Maximum Focus
-                            </h3>
-
-                            <p class="text-sm md:text-base text-white/90 hover:text-accent">
-                                Curious? Click to see the full blog!
-                            </p>
-
-                       
-                            <div class="flex justify-end gap-4">
-                                <button id="update-blog-btn"
-                                    class="bg-tertiary text-black px-4 py-2 rounded hover:bg-accent transition font-medium">
-                                    Update
-                                </button>
-                                <button onclick="deleteBlog()"
-                                    class="bg-secondary px-4 py-2 rounded hover:bg-red-500 transition font-medium">
-                                    Delete
-                                </button>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-secondary md:text-base text-white/90 gap-5 p-6 md:p-8 rounded-xl shadow-lg bg-opacity-90 transition-all delay-150 duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-accent">
-                            <img src="./src/images/decluttering-my-closet-lifestyle.jpg" alt=""
-                                class="w-32 h-32 md:w-40 md:h-40 rounded object-cover">
-                            <br> -->
-                    <!-- <p class="font-thin p-2">Your environment shapes your productivity. A clean, well-designed
-                                workspace can make coding feel less like a chore and
-                                more like a craft. Minimalism isn’t just aesthetic — it’s functional.
-
-                                Start with the basics: a good chair, a tidy desk, and one monitor. Add ambient lighting
-                                or a desk lamp with warm tones.
-                                Introduce a small plant — even a tiny succulent — to breathe life into your setup. Keep
-                                only essentials on your desk: a
-                                notebook, a pen, headphones. Clutter creates mental noise.
-
-                                Don’t forget sound: soft instrumental music or nature sounds can boost focus and reduce
-                                anxiety. And when the day's
-                                done, step away. Turn off your monitor, close your laptop, and reclaim your space.
-
-                                A peaceful desk creates a peaceful mind — and in turn, better, cleaner code.</p>
-                        </div> -->
-                    </li>
+                    
 
 
                 </ul>
@@ -199,13 +149,13 @@
 
                 <div>
                     <label for="blog-img-update">Image URL:</label><br>
-                <input type="text" id="blog-img-update" name="blog-img-update" placeholder="https://example.com/image.jpg"
+                <input required type="text" id="blog-img-update" name="blog-img-update" placeholder="https://example.com/image.jpg"
                     class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded">
                 </div>
                 </div>
                 <div class="w-full">
                     <label for="blog-category-update" class="block mb-1 text-white">Blog Category:</label>
-                    <select id="blog-category-update" name="blog-category-update"
+                    <select required id="blog-category-update" name="blog-category-update"
                         class="w-full p-2 bg-primary border rounded focus:outline-none focus:ring-2 focus:ring-secondary text-white">
                         <option value="">Select a category</option>
                         <option value="food">Food</option>
@@ -218,7 +168,7 @@
 
                 <div>
                     <label for="short-blog-posts-update">Blog Post:</label><br>
-                    <textarea name="short-blog-posts-update" id="short-blog-posts-update" rows="5"
+                    <textarea required name="short-blog-posts-update" id="short-blog-posts-update" rows="5"
                         class="w-full p-2 focus-within:outline-2 focus-within:outline-secondary bg-primary border rounded "
                         required></textarea>
                 </div>
