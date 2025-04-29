@@ -1,3 +1,5 @@
+
+
 function openCreateModule() {
     document.getElementById("create-blog-form").classList.remove("w-0");
     document.getElementById("create-blog-form").classList.add("w-full");
@@ -8,10 +10,7 @@ function closeCreateModule() {
     document.getElementById("create-blog-form").classList.add("w-0");
 }
 
-function openUpdateModule() {
-    document.getElementById("update-blog-form").classList.remove("w-0");
-    document.getElementById("update-blog-form").classList.add("w-full");
-}
+
 
 function closeUpdateModule() {
     document.getElementById("update-blog-form").classList.remove("w-full");
@@ -29,7 +28,7 @@ createBlogBtn.addEventListener('click', openCreateModule)
 closeCreateBlogBtn.addEventListener('click', closeCreateModule)
 
 // updateBlogBtn.addEventListener('click', openUpdateModule)
-// closeUpdateBlogBtn.addEventListener('click', closeUpdateModule)
+closeUpdateBlogBtn.addEventListener('click', closeUpdateModule)
 
 // // Open Blog Content
 // const openBlog = document.querySelectorAll('[name="open-blog-content"]')
@@ -58,6 +57,7 @@ const displayBlog = document.querySelector('#display-blog')
 //  Local Records from local storage
 let records = JSON.parse(localStorage.getItem("records")) || []
 
+blogList(records)
 //  Create
 createForm.addEventListener('submit', function (event) {
     event.preventDefault()
@@ -66,12 +66,10 @@ createForm.addEventListener('submit', function (event) {
     const category = document.getElementById("blog-category-create").value
     const post = document.getElementById("short-blog-posts-create").value
     let editIndex = document.getElementById("edit-index").value
-    const imgInput = document.getElementById("blog-img-create");
+    const image = document.getElementById("blog-img-create").value;
 
-    const imageFile = imgInput.files[0];
-    const imageURL = URL.createObjectURL(imageFile);
 
-    const newBlog = { title, category, post, image: imageURL };
+    const newBlog = { title, category, post, image };
 
     if (editIndex === "") {
         records.push(newBlog)
@@ -81,7 +79,8 @@ createForm.addEventListener('submit', function (event) {
         editIndex = ""
     }
     createForm.reset()
-    console.log(records)
+    closeCreateModule()
+
     blogList(records)
 })
 
@@ -118,7 +117,36 @@ function blogList(records) {
         const updateBtn = document.createElement('button')
         updateBtn.className = "bg-tertiary text-black px-4 py-2 rounded hover:bg-accent transition font-medium"
         updateBtn.setAttribute('id', 'update-blog-btn')
-        // updateBtn.onclick = editBlog(index)
+        updateBtn.addEventListener('click', () => {
+            document.getElementById("update-blog-form").classList.remove("w-0");
+            document.getElementById("update-blog-form").classList.add("w-full");
+            updateBlog(index)
+            const updateForm = document.getElementById("update-form")
+            updateForm.onsubmit = function (e) {
+                e.preventDefault()
+                const updatedTitle = document.getElementById("blog-titles-update").value
+                const updatedCategory = document.getElementById("blog-category-update").value
+                const updatedPost = document.getElementById("short-blog-posts-update").value
+                const updatedImage = document.getElementById("blog-img-update").value
+
+
+
+                const updatedBlog = {
+                    title: updatedTitle,
+                    category: updatedCategory,
+                    post: updatedPost,
+                    image: updatedImage
+                };
+
+                records[index] = updatedBlog;
+                localStorage.setItem("records", JSON.stringify(records));
+                console.log(records)
+                blogList(records);
+                updateForm.reset();
+                closeUpdateModule();
+
+            }
+        });
         updateBtn.textContent = "Update"
 
         const deleteBtn = document.createElement('button')
@@ -171,11 +199,26 @@ function blogList(records) {
         displayBlog.appendChild(li)
 
     });
+    localStorage.setItem("records", JSON.stringify(records))
+}
+
+//  3. Update Blog
+function updateBlog(index) {
+    const blog = records[index];
+
+    document.getElementById("blog-titles-update").value = blog.title;
+    document.getElementById("blog-category-update").value = blog.category;
+    document.getElementById("short-blog-posts-update").value = blog.post;
+    document.getElementById("edit-index").value = index
+    document.getElementById("blog-img-update").value = blog.image;
+
+
 }
 
 
 
-// Delete Blog
+
+//  4. Delete Blog
 function deleteBlog(index) {
 
 
